@@ -10,33 +10,45 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace projet_C_;
+
+// -- TP Projet 1 --
+// Gaillard Quentin
+// SIO1
+
+// class to represent a student with name, average and if he is a scholarship holder or not.
 class Student
 {
+    // number of students created, used to generate unique ID for each student
     private static int nbStudent = 0;
+    // name of the student
     private string name;
     public string Name 
     { 
         get { return name; }
         set { name = value; }
     }
+    // average of the student
     private double average {set; get; } 
     public double Average
     { 
         get { return average; }
         set { average = value; }
     }
+    // if the student is a scholarship holder or not
     private bool isScholarshipHolder {set; get; }
     public bool IsScholarshipHolder
     { 
         get { return isScholarshipHolder; }
         set { isScholarshipHolder = value; }
     }
+    // unique ID of the student
     private int id;
     public int Id
     {
         get { return id; }
     }
 
+    // constructor with all parameters
     public Student(string name, double average, bool isScholarshipHolder)
     {
         this.name = name;
@@ -53,32 +65,39 @@ class Student
         nbStudent++;
         this.id = nbStudent;
     }    
+
+    // method to display the information of the student
     public void Display()
     {
         Console.WriteLine($"nom: {name}, moyenne: {average}, est boursier: {isScholarshipHolder}");
     }
 }
 
+// class to represent a course with name, credit, if it is mandatory or not and the list of students enrolled in the course.
 class Course
 {
+    // name of the course
     private string name {set; get; }
     public string Name 
     { 
         get { return name; }
         set { name = value; }
     }
+    // credit of the course
     private int credit {set; get; }
     public int Credit
     { 
         get { return credit; }
         set { credit = value; }
     }
+    // if the course is mandatory or not
     private bool isMandatory {set; get; }
     public bool IsMandatory 
     { 
         get { return isMandatory; }
         set { isMandatory = value; }
     }
+    // list of students enrolled in the course
     private List<Student> students {set; get; }
     public List<Student> Students
     { 
@@ -86,6 +105,7 @@ class Course
         set { students = value; }
     }
 
+    // constructor with all parameters
     public Course(string name, int credit, bool isMandatory, List<Student> students)
     {
         this.name = name;
@@ -100,21 +120,25 @@ class Course
         this.students = new List<Student>();
     }
 
+    // method to add a student to the course
     public void AddStudent(Student student)
     {
         students.Add(student);
     }
 
+    // method to remove a student from the course
     public void RemoveStudent(Student student)
     {
         students.Remove(student);
     }
 
+    // method to display the information of the course
     public void Display()
     {
         Console.WriteLine($"nom: {name}, credit: {credit}, est obligatoire: {isMandatory}, nombre d'élèves: {students.Count}");
     }
 
+    // method to display the list of students enrolled in the course
     public void DisplayStudents()
     {
         Console.WriteLine("élèves:");

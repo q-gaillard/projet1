@@ -1,0 +1,15 @@
+C:\Users\qgaillard\projet1\bin\Debug\net10.0\projet-C#.exe
+C:\Users\qgaillard\projet1\bin\Debug\net10.0\projet-C#.deps.json
+C:\Users\qgaillard\projet1\bin\Debug\net10.0\projet-C#.runtimeconfig.json
+C:\Users\qgaillard\projet1\bin\Debug\net10.0\projet-C#.dll
+C:\Users\qgaillard\projet1\bin\Debug\net10.0\projet-C#.pdb
+C:\Users\qgaillard\projet1\obj\Debug\net10.0\projet-C#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\qgaillard\projet1\obj\Debug\net10.0\projet-C#.AssemblyInfoInputs.cache
+C:\Users\qgaillard\projet1\obj\Debug\net10.0\projet-C#.AssemblyInfo.cs
+C:\Users\qgaillard\projet1\obj\Debug\net10.0\projet-C#.csproj.CoreCompileInputs.cache
+C:\Users\qgaillard\projet1\obj\Debug\net10.0\projet-C#.sourcelink.json
+C:\Users\qgaillard\projet1\obj\Debug\net10.0\projet-C#.dll
+C:\Users\qgaillard\projet1\obj\Debug\net10.0\refint\projet-C#.dll
+C:\Users\qgaillard\projet1\obj\Debug\net10.0\projet-C#.pdb
+C:\Users\qgaillard\projet1\obj\Debug\net10.0\projet-C#.genruntimeconfig.cache
+C:\Users\qgaillard\projet1\obj\Debug\net10.0\ref\projet-C#.dll

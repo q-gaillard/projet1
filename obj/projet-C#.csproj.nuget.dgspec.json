@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\qgaillard\\Documents\\projets\\mes-projets\\projet-C#\\projet-C#.csproj": {}
+    "C:\\Users\\qgaillard\\projet1\\projet-C#.csproj": {}
   },
   "projects": {
-    "C:\\Users\\qgaillard\\Documents\\projets\\mes-projets\\projet-C#\\projet-C#.csproj": {
+    "C:\\Users\\qgaillard\\projet1\\projet-C#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\qgaillard\\Documents\\projets\\mes-projets\\projet-C#\\projet-C#.csproj",
+        "projectUniqueName": "C:\\Users\\qgaillard\\projet1\\projet-C#.csproj",
         "projectName": "projet-C#",
-        "projectPath": "C:\\Users\\qgaillard\\Documents\\projets\\mes-projets\\projet-C#\\projet-C#.csproj",
+        "projectPath": "C:\\Users\\qgaillard\\projet1\\projet-C#.csproj",
         "packagesPath": "C:\\Users\\qgaillard\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\qgaillard\\Documents\\projets\\mes-projets\\projet-C#\\obj\\",
+        "outputPath": "C:\\Users\\qgaillard\\projet1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

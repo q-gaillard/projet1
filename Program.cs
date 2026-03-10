@@ -98,6 +98,16 @@ class Course
     {
         this.name = name;
     }
+
+    public void AddStudent(Student student)
+    {
+        students.Add(student);
+    }
+
+    public void RemoveStudent(Student student)
+    {
+        students.Remove(student);
+    }
 }
 class Program
 {

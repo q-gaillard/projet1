@@ -53,10 +53,9 @@ class Student
         nbStudent++;
         this.id = nbStudent;
     }    
-    public Student()
+    public void Display()
     {
-        nbStudent++;
-        this.id = nbStudent;
+        Console.WriteLine($"nom: {name}, moyenne: {average}, est boursier: {isScholarshipHolder}");
     }
 }
 
@@ -93,10 +92,12 @@ class Course
         this.credit = credit;
         this.isMandatory = isMandatory;
         this.students = students;
+        this.students = new List<Student>();
     }
     public Course(string name)
     {
         this.name = name;
+        this.students = new List<Student>();
     }
 
     public void AddStudent(Student student)
@@ -108,11 +109,29 @@ class Course
     {
         students.Remove(student);
     }
+
+    public void Display()
+    {
+        Console.WriteLine($"nom: {name}, credit: {credit}, est obligatoire: {isMandatory}, nombre d'élèves: {students.Count}");
+    }
+
+    public void DisplayStudents()
+    {
+        Console.WriteLine("élèves:");
+        foreach (Student student in students)
+        {
+            Console.WriteLine($"- {student.Name}, moyenne: {student.Average}, est boursier: {student.IsScholarshipHolder}");
+        }
+        Console.WriteLine();
+    }
 }
 class Program
 {
     static void Main(string[] args)
     {
+        // -- Création des étudiants et des cours --
+        //( oui j'ai mis le reste des commentaires en anglais ! et alors !)
+
         // Create some students
         Student student1 = new Student("Alice", 15.5, true);
         Student student2 = new Student("Bernard", 10, false);
@@ -131,16 +150,24 @@ class Program
         courseAnglais = new Course("Anglais", 4, true, new List<Student>());
         courseHistoire = new Course("Histoire", 4, false, new List<Student>());
         // Add students to courses
-        courseMaths.Students = new List<Student> { student1, student2, student3 };
-        courseInformatique.Students = new List<Student> { student2, student4 };
-        courseAnglais.Students = new List<Student> { student1, student5 };
-        courseHistoire.Students = new List<Student> { student4 };
+        //Add in mathétatique ( my franglais is so fanstistic ;-) )
+        courseMaths.AddStudent(student1);
+        courseMaths.AddStudent(student2);
+        courseMaths.AddStudent(student3);
+        //Add in informatique
+        courseInformatique.AddStudent(student2);
+        courseInformatique.AddStudent(student4);
+        //Add in anglais
+        courseAnglais.AddStudent(student1);
+        courseAnglais.AddStudent(student5);
+        //Add in histoire
+        courseHistoire.AddStudent(student4);
 
         List<Course> courses = new List<Course> { courseMaths, courseInformatique, courseAnglais, courseHistoire };
         // show each courses
         foreach (Course course in courses)
         {
-            Console.WriteLine($"Cours: {course.Name}, Credit: {course.Credit}, est obligatoire: {course.IsMandatory}, Nombre d'élèves: {course.Students.Count}");
+            course.Display();
         }
         Console.WriteLine();
         Console.WriteLine("------------------------------");
@@ -148,13 +175,8 @@ class Program
         // show each courses with the students
         foreach (Course course in courses)
         {
-            Console.WriteLine($"Cours: {course.Name}, Credit: {course.Credit}, est obligatoire: {course.IsMandatory}");
-            Console.WriteLine("élèves:");
-            foreach (Student student in course.Students)
-            {
-                Console.WriteLine($"- {student.Name}, moyenne: {student.Average}, est boursier: {student.IsScholarshipHolder}");
-            }
-            Console.WriteLine();
+            course.Display();
+            course.DisplayStudents();
         }
         Console.WriteLine();
         Console.WriteLine("------------------------------");
@@ -165,7 +187,7 @@ class Program
         {
             if (course.IsMandatory)
             {
-                Console.WriteLine($"- {course.Name}");
+                course.Display();
             }
         }
         Console.WriteLine();
@@ -178,7 +200,7 @@ class Program
         {
             if (student.IsScholarshipHolder)
             {
-                Console.WriteLine($"- {student.Name}, moyenne: {student.Average}");
+                student.Display();
             }
         }
         Console.WriteLine();
@@ -190,7 +212,7 @@ class Program
         {
             if (student.Average > 15)
             {
-                Console.WriteLine($"- {student.Name}, moyenne: {student.Average}");
+                student.Display();
             }
         }
         Console.WriteLine();
@@ -199,18 +221,13 @@ class Program
         // delete a student from a course
         Console.WriteLine("Suppression de l'étudiant Bernard du cours de Mathématiques...");
         Console.WriteLine("...");
-        courseMaths.Students.Remove(student2);
+        courseMaths.RemoveStudent(student2);
         // show the courses with the students after deletion
         Console.WriteLine("Cours après suppression de Bernard du cours de Mathématiques:");
         foreach (Course course in courses)
         {
-            Console.WriteLine($"Cours: {course.Name}, Credit: {course.Credit}, est obligatoire: {course.IsMandatory}");
-            Console.WriteLine("élèves:");
-            foreach (Student student in course.Students)
-            {
-                Console.WriteLine($"- {student.Name}, moyenne: {student.Average}, est boursier: {student.IsScholarshipHolder}");
-            }
-            Console.WriteLine();
+            course.Display();
+            course.DisplayStudents();
         }
         Console.WriteLine();
         Console.WriteLine("------------------------------");
